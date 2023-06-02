@@ -1,10 +1,10 @@
 const conexion = require("../conexion");
 
 module.exports = {
-    insertar(nombre, email, telefono, area_p, area_a, contraseña) {
+    insertar(doc_id,nombre, email, telefono, area_p, area_a, contraseña) {
         return new Promise((resolve, reject) => {
-            conexion.query(`insert into Profesor(nombre, email, telefono, area_p, area_a, contraseña) values (?, ?, ?,?,?,?)`,
-                [nombre, email, telefono, area_p, area_a, contraseña], (err, resultados) => {
+            conexion.query(`insert into Profesor(doc_id,nombre, email, telefono, area_p, area_a, contraseña) values (?,?, ?, ?,?,?,?)`,
+                [doc_id,nombre, email, telefono, area_p, area_a, contraseña], (err, resultados) => {
                     if (err) reject(err);
                     else resolve(resultados.insertId);
                 });
