@@ -26,7 +26,7 @@ router.post('/insertar', function (req, res, next) {
         return res.status(500).send("Falta una parte del registro");
     }
     // Si todo va bien, seguimos
-    productoModel
+    profesorModel
         .insertar(nombre,email, telefono, area_p, area_a, contraseña)
         .then(doc_id => {
             res.redirect("/Profesor");
@@ -36,7 +36,7 @@ router.post('/insertar', function (req, res, next) {
         });
 });
 router.get('/eliminar/:doc_id', function (req, res, next) {
-    productoModel
+    profesorModel
         .eliminar(req.params.doc_id)
         .then(() => {
             res.redirect("/Profesor");
@@ -46,7 +46,7 @@ router.get('/eliminar/:doc_id', function (req, res, next) {
         });
 });
 router.get('/editar/:doc_id', function (req, res, next) {
-    productoModel
+    profesorModel
         .obtenerPorId(req.params.doc_id)
         .then(Profesor => {
             if (Profesor) {
@@ -67,7 +67,7 @@ router.post('/actualizar/', function (req, res, next) {
         return res.status(500).send("No hay suficientes datos");
     }
     // Si todo va bien, seguimos
-    productoModel
+    profesorModel
         .actualizar(doc_id, nombre,email, telefono, area_p, area_a, contraseña)
         .then(() => {
             res.redirect("/Profesor");
