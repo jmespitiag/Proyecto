@@ -3,7 +3,7 @@ const conexion = require("../conexion");
 module.exports = {
     insertar(nombre, email, telefono, area_p, area_a, contraseña) {
         return new Promise((resolve, reject) => {
-            conexion.query(`insert into productos (nombre, email, telefono, area_p, area_a, contraseña) values (?, ?, ?,?,?,?)`,
+            conexion.query(`insert into Profesor(nombre, email, telefono, area_p, area_a, contraseña) values (?, ?, ?,?,?,?)`,
                 [nombre, email, telefono, area_p, area_a, contraseña], (err, resultados) => {
                     if (err) reject(err);
                     else resolve(resultados.insertId);
@@ -12,7 +12,7 @@ module.exports = {
     },
     obtener() {
         return new Promise((resolve, reject) => {
-            conexion.query(`select doc_id, nombre, email, telefono, area_p, area_a, contraseña from productos`,
+            conexion.query(`select doc_id, nombre, email, telefono, area_p, area_a, contraseña from Profesor`,
                 (err, resultados) => {
                     if (err) reject(err);
                     else resolve(resultados);
@@ -21,7 +21,7 @@ module.exports = {
     },
     obtenerPorId(doc_id) {
         return new Promise((resolve, reject) => {
-            conexion.query(`select doc_id,nombre, email, telefono, area_p, area_a, contraseña from productos where id = ?`,
+            conexion.query(`select doc_id,nombre, email, telefono, area_p, area_a, contraseña from Profesor where doc_id = ?`,
                 [doc_id],
                 (err, resultados) => {
                     if (err) reject(err);
@@ -31,7 +31,7 @@ module.exports = {
     },
     actualizar(doc_id, nombre, email, telefono, area_p, area_a, contraseña) {
         return new Promise((resolve, reject) => {
-            conexion.query(`update productos
+            conexion.query(`update Profesor
             set nombre = ?,
             email = ?,
             telefono = ?,
@@ -48,7 +48,7 @@ module.exports = {
     },
     eliminar(doc_id) {
         return new Promise((resolve, reject) => {
-            conexion.query(`delete from productos
+            conexion.query(`delete from Profesor
             where doc_id = ?`,
                 [doc_id],
                 (err) => {
