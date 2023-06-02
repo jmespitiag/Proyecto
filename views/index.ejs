@@ -3,34 +3,58 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style>
+      /* Estilos para la lista desplegable */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+    </style>
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Estás mirando la página de inicio, navega a:<br>
-      1. <a href="/Profesor">/Profesor</a><br>
-      2. <a href="/Usuario">/Usuario</a><br>
-      3. <a href="/Curso">/Curso</a><br>
-      4. <a href="/Estudiante">/Estudiante</a><br>
-      5. <a href="/Material">/Material</a><br>
-      6. <a href="/Tarea">/Tarea</a><br>
-      7. <a href="/Foro">/Foro</a><br>
-      8. <a href="/Mensaje">/Mensaje</a><br>
-      9. <a href="/Administrador">/Administrador</a><br>
-      10. <a href="/Consulta">/Consulta</a><br>
-      11. <a href="/Paga">/Paga</a><br>
-      12. <a href="/Visualizar">/Visualizar</a><br>
-      13. <a href="/Ver">/Ver</a><br>
-      14. <a href="/Entregar">/Entregar</a><br>
-      15. <a href="/Participa">/Participa</a><br>
-      16. <a href="/Dicta">/Dicta</a><br>
-      17. <a href="/Asigna">/Asigna</a><br>
-      18. <a href="/Gestiona">/Gestiona</a><br>
-      19. <a href="/Encarga">/Encarga</a><br>
-      20. <a href="/Administra">/Administra</a><br>
-      21. <a href="/Remite">/Remite</a><br>
-      22. <a href="/Recibe">/Recibe</a><br>
-      23. <a href="/Envia">/Envia</a><br>
-      24. <a href="/Tiene">/Tiene</a>
-    </p>
+    <p>Estás mirando la página de inicio, navega a:</p>
+    <div class="dropdown">
+      <span>Selecciona una opción</span>
+      <div class="dropdown-content">
+        <a href="/Profesor">/Profesor</a>
+        <a href="/Usuario">/Usuario</a>
+        <a href="/Curso">/Curso</a>
+        <a href="/Estudiante">/Estudiante</a>
+        <a href="/Material">/Material</a>
+        <a href="/Tarea">/Tarea</a>
+        <a href="/Foro">/Foro</a>
+        <a href="/Mensaje">/Mensaje</a>
+        <a href="/Administrador">/Administrador</a>
+        <a href="/Consulta">/Consulta</a>
+        <a href="/Paga">/Paga</a>
+        <a href="/Visualizar">/Visualizar</a>
+        <a href="/Ver">/Ver</a>
+        <a href="/Entregar">/Entregar</a>
+        <a href="/Participa">/Participa</a>
+        <a href="/Dicta">/Dicta</a>
+        <a href="/Asigna">/Asigna</a>
+        <a href="/Gestiona">/Gestiona</a>
+        <a href="/Encarga">/Encarga</a>
+        <a href="/Administra">/Administra</a>
+        <a href="/Remite">/Remite</a>
+        <a href="/Recibe">/Recibe</a>
+        <a href="/Envia">/Envia</a>
+        <a href="/Tiene">/Tiene</a>
+      </div>
+    </div>
   </body>
 </html>
