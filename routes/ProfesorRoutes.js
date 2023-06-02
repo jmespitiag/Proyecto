@@ -21,13 +21,13 @@ router.get('/agregar', function (req, res, next) {
     res.render("Profesor/agregar");
 });
 router.post('/insertar', function (req, res, next) {
-    const { nombre,email, telefono, area_p, area_a, contraseña } = req.body;
-    if (!nombre || !email || !telefono || !area_p || !area_a || !contraseña) {
+    const { doc_id,nombre,email, telefono, area_p, area_a, contraseña } = req.body;
+    if (!doc_id|| !nombre || !email || !telefono || !area_p || !area_a || !contraseña) {
         return res.status(500).send("Falta una parte del registro");
     }
     // Si todo va bien, seguimos
     profesorModel
-        .insertar(nombre,email, telefono, area_p, area_a, contraseña)
+        .insertar(doc_id,nombre,email, telefono, area_p, area_a, contraseña)
         .then(doc_id => {
             res.redirect("/Profesor");
         })
