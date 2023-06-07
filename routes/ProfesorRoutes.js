@@ -61,20 +61,20 @@ router.get('/editar/:doc_id', function (req, res, next) {
             return res.status(500).send("Error obteniendo Profesor");
         });
 });
-router.post('/actualizar/', function (req, res, next) {
-    const {nombre,email, telefono, area_p, area_a, contraseña} = req.body;
-    if (!nombre || !email|| !telefono || !area_p || !area_a || !contraseña) {
-        return res.status(500).send("No hay suficientes datos");
+router.post('/actualizar/:doc_id', function (req, res, next) {
+    const { nombre, email, telefono, area_p, area_a, contraseña } = req.body;
+    if (!nombre || !email || !telefono || !area_p || !area_a || !contraseña) {
+      return res.status(500).send("No hay suficientes datos");
     }
     // Si todo va bien, seguimos
     profesorModel
-        .actualizar(req.params.doc_id,nombre,email, telefono, area_p, area_a, contraseña)
-        .then(() => {
-            res.redirect("/Profesor");
-        })
-        .catch(err => {
-            return res.status(500).send("Error actualizando Profesor");
-        });
-});
+      .actualizar(req.params.doc_id, nombre, email, telefono, area_p, area_a, contraseña)
+      .then(() => {
+        res.redirect("/Profesor");
+      })
+      .catch(err => {
+        return res.status(500).send("Error actualizando Profesor");
+      });
+  });
 
 module.exports = router;
