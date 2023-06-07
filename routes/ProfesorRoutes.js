@@ -68,7 +68,7 @@ router.post('/actualizar/', function (req, res, next) {
     }
     // Si todo va bien, seguimos
     profesorModel
-        .actualizar(nombre,email, telefono, area_p, area_a, contraseña)
+        .actualizar(req.params.doc_id,nombre,email, telefono, area_p, area_a, contraseña)
         .then(() => {
             res.redirect("/Profesor");
         })
