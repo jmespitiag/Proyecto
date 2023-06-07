@@ -37,7 +37,7 @@ module.exports = {
             telefono = ?,
             area_p = ?,
             area_a = ?,
-            contraseña = ?,
+            contraseña = ?
             where doc_id = ?`,
                 [nombre,email, telefono, area_p, area_a, contraseña, doc_id],
                 (err) => {
