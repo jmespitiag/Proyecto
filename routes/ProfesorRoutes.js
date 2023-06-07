@@ -62,8 +62,8 @@ router.get('/editar/:doc_id', function (req, res, next) {
         });
 });
 router.post('/actualizar/', function (req, res, next) {
-    const { doc_id,nombre,email, telefono, area_p, area_a, contraseña} = req.body;
-    if (!nombre || !email|| !doc_id || !telefono || !area_p || !area_a || !contraseña) {
+    const {nombre,email, telefono, area_p, area_a, contraseña} = req.body;
+    if (!nombre || !email|| !telefono || !area_p || !area_a || !contraseña) {
         return res.status(500).send("No hay suficientes datos");
     }
     // Si todo va bien, seguimos
