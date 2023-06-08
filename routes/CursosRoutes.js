@@ -30,6 +30,7 @@ router.get('/:id_curso', async (req, res, next) => {
     const foros = await CursoModel.listarForo(id_curso);
 
     const data = {
+      Nombre,
       profesores,
       alumnos,
       materiales,
@@ -37,7 +38,7 @@ router.get('/:id_curso', async (req, res, next) => {
       foros
     };
 
-    res.render('Cursos/curso', { Curso: data, id_curso: req.params.id_curso,Nombre: nombreCruso });
+    res.render('Cursos/curso', { Curso: data, id_curso: req.params.id_curso });
   } catch (error) {
     console.error(error);
     res.status(500).send('Error al obtener los datos');
