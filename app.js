@@ -7,6 +7,7 @@ var logger = require('morgan');
 var indexRoutes = require('./routes/index');
 var ProfesorRoutes = require('./routes/ProfesorRoutes');
 var EstudianteRoutes = require('./routes/EstudianteRoutes')
+var CursosRoutes = require('./routes/CursosRoutes')
 var app = express();
 
 // view engine setup
@@ -24,6 +25,9 @@ app.use('/Profesor', ProfesorRoutes);
 
 app.use('/', indexRoutes);
 app.use('/Estudiante', EstudianteRoutes);
+
+app.use('/', indexRoutes);
+app.use('/Cursos', CursosRoutes);
 
 
 app.use(function(req, res, next) {
