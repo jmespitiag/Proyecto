@@ -12,7 +12,7 @@ module.exports = {
       });
     });
   },
-  listarNombre(id_curso){
+  listarNombre(id_curso) {
     return new Promise((resolve, reject) => {
       conexion.query('SELECT Nombre FROM Curso WHERE Curso.id_curso = ?',
         [id_curso],
@@ -20,12 +20,18 @@ module.exports = {
           if (err) {
             reject(err);
           } else {
-            resolve(results);
+            if (results.length > 0) {
+              const nombre = results[0].Nombre;
+              resolve(nombre);
+            } else {
+              resolve(null); 
+            }
           }
         }
       );
     });
   },
+  
   listarProfesor(id_curso) {
     return new Promise((resolve, reject) => {
       conexion.query('SELECT Profesor.nombre, Profesor.email FROM Profesor INNER JOIN Dicta ON Profesor.doc_id = Dicta.doc_id INNER JOIN Curso ON Dicta.id_curso = Curso.id_curso WHERE Curso.id_curso = ?',
