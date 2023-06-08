@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const CursoModel = require('../models/curso');
+const CursoModel = require('../models/Cursos');
 
 router.get('/', (req, res, next) => {
   CursoModel.listar()
