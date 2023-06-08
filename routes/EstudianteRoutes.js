@@ -63,13 +63,13 @@ router.get('/editar/:id_nodo', function (req, res, next) {
         });
 });
 router.post('/actualizar/', function (req, res, next) {
-    const { id_nodo, nombre, email, telefono, area_p, area_a, contraseña } = req.body;
+    const { id_nodo,ref_bancaria, email,genero,nombre,doc_identidad,contraseña} = req.body;
     if ( !id_nodo ||  !ref_bancaria || !email || !genero || !nombre || !doc_identidad || !contraseña) {
         return res.status(500).send("No hay suficientes datos");
     }
     // Si todo va bien, seguimos
     EstudianteModel
-        .actualizar(id_nodo, nombre, email, telefono, area_p, area_a, contraseña)
+        .actualizar(id_nodo,ref_bancaria, email,genero,nombre,doc_identidad,contraseña)
         .then(() => {
             res.redirect("/Estudiante");
         })
