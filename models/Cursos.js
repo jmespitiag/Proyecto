@@ -3,7 +3,7 @@ const conexion = require("../conexion");
 module.exports = {
   listar() {
     return new Promise((resolve, reject) => {
-      conexion.query('SELECT Nombre, categoria FROM Curso', (err, results) => {
+      conexion.query('SELECT Nombre, categoria,id_curso FROM Curso', (err, results) => {
         if (err) {
           reject(err);
         } else {

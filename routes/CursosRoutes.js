@@ -8,6 +8,7 @@ router.get('/', (req, res, next) => {
     .then((Curso) => {
       res.render('Cursos/ver', {
         Curso: Curso
+        
       });
     })
     .catch((err) => {
