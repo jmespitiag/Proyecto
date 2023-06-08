@@ -1,0 +1,40 @@
+<%- include("../header"); %>
+<div class="col-12">
+    <h1>Estudiantes</h1>
+    <a href="/Estudiante/agregar" class="btn btn-primary mb-2">Agregar</a>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ref_bancaria</th>
+                <th>email</th>
+                <th>genero</th>
+                <th>nombre</th>
+                <th>contraseña</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% Estudiante.forEach(Estudiante=> { %>
+            <tr>
+                <td><%= Estudiante.ref_bancaria %></td>
+                <td><%= Estudiante.email %></td>
+                <td><%= Estudiante.genero %></td>
+                <td><%= Estudiante.nombre %></td>
+                <td><%= Estudiante.contraseña %></td>
+                <td>
+                    <a href="/Estudiante/editar/<%= Estudiante.id_nodo %>" class="btn btn-warning">
+                        Editar
+                    </a>
+                </td>
+                <td>
+                    <a href="/Estudiante/eliminar/<%= Estudiante.id_nodo %>" class="btn btn-danger">
+                        Eliminar
+                    </a>
+                </td>
+            </tr>
+            <% })%>
+        </tbody>
+    </table>
+</div>
+<%- include("../footer"); %>
