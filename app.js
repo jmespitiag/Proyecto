@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 var indexRoutes = require('./routes/index');
 var ProfesorRoutes = require('./routes/ProfesorRoutes');
-var EstudianteRoutes = require('./routes/>EstudianteRoutes')
+var EstudianteRoutes = require('./routes/EstudianteRoutes')
 var app = express();
 
 // view engine setup
