@@ -14,7 +14,7 @@ module.exports = {
   },
   listarNombre(id_curso){
     return new Promise((resolve, reject) => {
-      conexion.query('SELECT Nombre FROM Cruso WHERE Curso.id_curso = ?',
+      conexion.query('SELECT Nombre FROM Curso WHERE Curso.id_curso = ?',
         [id_curso],
         (err, results) => {
           if (err) {
