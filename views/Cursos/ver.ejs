@@ -8,8 +8,8 @@
     <ul>
         <% Curso.forEach(function(curso) { %>
             <li>
-                <a href="/Cursos/<%= curso.id_curso %>">
-                    <%= curso.Nombre %> - <%= curso.categoria %>
+                <a href="/Cursos/<%= Curso.id_curso %>">
+                    <%= Curso.Nombre %> - <%= Curso.categoria %>
                 </a>
             </li>
         <% }); %>
