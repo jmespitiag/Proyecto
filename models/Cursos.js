@@ -12,7 +12,20 @@ module.exports = {
       });
     });
   },
-
+  listarNombre(id_curso){
+    return new Promise((resolve, reject) => {
+      conexion.query('SELECT Nombre FROM Cruso WHERE Curso.id_curso = ?',
+        [id_curso],
+        (err, results) => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(results);
+          }
+        }
+      );
+    });
+  },
   listarProfesor(id_curso) {
     return new Promise((resolve, reject) => {
       conexion.query('SELECT Profesor.nombre, Profesor.email FROM Profesor INNER JOIN Dicta ON Profesor.doc_id = Dicta.doc_id INNER JOIN Curso ON Dicta.id_curso = Curso.id_curso WHERE Curso.id_curso = ?',
