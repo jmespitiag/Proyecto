@@ -22,7 +22,7 @@ router.get('/:id_curso', async (req, res, next) => {
     let id_curso = req.params.id_curso;
     const nombre = CursoModel.listarNombre(id_curso)
     const profesores = await CursoModel.listarProfesor(id_curso);
-    console.log(Nombre); // Agrega este console.log para verificar el contenido de profesores
+    console.log(nombre); 
 
     const alumnos = await CursoModel.listarAlumnos(id_curso);
     const materiales = await CursoModel.listarMaterial(id_curso);

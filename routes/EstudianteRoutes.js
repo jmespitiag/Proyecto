@@ -67,7 +67,7 @@ router.post('/actualizar/', function (req, res, next) {
     if ( !id_nodo ||  !ref_bancaria || !email || !genero || !nombre || !doc_identidad || !contraseña) {
         return res.status(500).send("No hay suficientes datos");
     }
-    // Si todo va bien, seguimos
+   
     EstudianteModel
         .actualizar(id_nodo,ref_bancaria, email,genero,nombre,doc_identidad,contraseña)
         .then(() => {
