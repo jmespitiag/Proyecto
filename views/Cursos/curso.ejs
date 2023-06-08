@@ -11,7 +11,7 @@
     <ul>
         <% if (Curso.profesores) {
             Curso.profesores.forEach(function(profesor) { %>
-                <li>Nombre: <%= profesor.nombre %>, Email: <%= profesor.email %></li>
+                <li>Nombre: <%= profesor.nombre %>,   Email: <%= profesor.email %></li>
             <% });
         } %>
     </ul>
@@ -20,7 +20,7 @@
     <ul>
         <% if (Curso.alumnos) {
             Curso.alumnos.forEach(function(alumno) { %>
-                <li>Nombre: <%= alumno.nombre %>, Email: <%= alumno.email %></li>
+                <li>Nombre: <%= alumno.nombre %>,   Email: <%= alumno.email %></li>
             <% });
         } %>
     </ul>
@@ -29,7 +29,7 @@
     <ul>
         <% if (Curso.materiales) {
             Curso.materiales.forEach(function(material) { %>
-                <li>Título: <%= material.titulo %>, Descripción: <%= material.descripcion %>, Archivo: <%= material.archivo %></li>
+                <li>Título: <%= material.titulo %>,   Descripción: <%= material.descripcion %>,   Archivo: <%= material.archivo %></li>
             <% });
         } %>
     </ul>
@@ -38,7 +38,7 @@
     <ul>
         <% if (Curso.tareas) {
             Curso.tareas.forEach(function(tarea) { %>
-                <li>Nombre: <%= tarea.nombre %>, Descripción: <%= tarea.descripcion %>, Fecha de entrega: <%= tarea.fecha_e %>, Archivo: <%= tarea.archivo %></li>
+                <li>Nombre: <%= tarea.nombre %>,   Descripción: <%= tarea.descripcion %>,   Fecha de entrega: <%= tarea.fecha_e %>,   Archivo: <%= tarea.archivo %></li>
             <% });
         } %>
     </ul>
@@ -47,7 +47,7 @@
     <ul>
         <% if (Curso.foros) {
             Curso.foros.forEach(function(foro) { %>
-                <li>Nombre: <%= foro.nombre %>, Descripción: <%= foro.descripcion %></li>
+                <li>Nombre: <%= foro.nombre %>,   Descripción: <%= foro.descripcion %></li>
             <% });
         } %>
     </ul>
