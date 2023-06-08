@@ -13,7 +13,7 @@
     <ul>
         <% Curso.forEach(function(curso) { %>
             <li>
-                <a href="/Cursos/:<%= curso.id_curso %>">
+                <a href="/Cursos/<%= curso.id_curso %>">
                     <div class="curso-info">
                         <span>Nombre materia: <%= curso.Nombre %></span> - <span>Categoria del curso: <%= curso.categoria %></span>
                     </div>
