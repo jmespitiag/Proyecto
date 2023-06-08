@@ -1,36 +1,36 @@
 <%- include("../header"); %>
 <div class="col-12">
-    <h1>Editar Profesor
+    <h1>Editar Profesor</h1>
     <form method="post" action="/Profesor/actualizar">
 
         <input value="<%= Profesor.doc_id %>" name="doc_id" type="hidden">
         <div class="form-group">
-            <label for="nombre">nombre</label>
+            <label for="nombre" class="small">nombre</label>
             <input value="<%= Profesor.nombre %>" required id="nombre" placeholder="Nombre del profesor"
                 class="form-control" type="text" name="nombre">
         </div>
         <div class="form-group">
-            <label for="email">email</label>
+            <label for="email" class="small">email</label>
             <input value="<%= Profesor.email %>" required id="email" placeholder="Email del profesor"
                 class="form-control" type="text" name="email">
         </div>
         <div class="form-group">
-            <label for="telefono">telefono</label>
+            <label for="telefono" class="small">telefono</label>
             <input value="<%= Profesor.telefono %>" required id="telefono" placeholder="Telefono del profesor"
                 class="form-control" type="number" name="telefono">
         </div>
         <div class="form-group">
-            <label for="area_p">area_p</label>
+            <label for="area_p" class="small">area_p</label>
             <input value="<%= Profesor.area_p %>" required id="area_p" placeholder="Area principal del profesor"
                 class="form-control" type="text" name="area_p">
         </div>
         <div class="form-group">
-            <label for="area_a">area_a</label>
+            <label for="area_a" class="small">area_a</label>
             <input value="<%= Profesor.area_a %>" required id="area_a" placeholder="Area alternativa del profesor"
                 class="form-control" type="text" name="area_a">
         </div>
         <div class="form-group">
-            <label for="contraseña">contraseña</label>
+            <label for="contraseña" class="small">contraseña</label>
             <input value="<%= Profesor.contraseña %>" required id="contraseña" placeholder="Contraseña del profesor"
                 class="form-control" type="text" name="contraseña">
         </div>
