@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const CursoModel = require('../models/Cursos');
+const CursoModel = require('../models/curso');
 
 router.get('/', (req, res, next) => {
   CursoModel.listar()
@@ -18,7 +18,7 @@ router.get('/', (req, res, next) => {
 
 router.get('/:id_curso', async (req, res, next) => {
   try {
-    const id_curso = req.params.id_curso;
+    let id_curso = req.params.id_curso;
     const profesores = await CursoModel.listarProfesor(id_curso);
     const alumnos = await CursoModel.listarAlumnos(id_curso);
     const materiales = await CursoModel.listarMaterial(id_curso);
@@ -30,10 +30,10 @@ router.get('/:id_curso', async (req, res, next) => {
       alumnos,
       materiales,
       tareas,
-      foros
+      foroso
     };
 
-    res.render('Cursos/:id_curso', { Curso: data });
+    res.render('Cursos/curso', { Curso: data });
   } catch (error) {
     console.error(error);
     res.status(500).send('Error al obtener los datos');
