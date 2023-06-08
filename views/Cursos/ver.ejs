@@ -2,17 +2,25 @@
 <html>
 <head>
     <title>Cursos</title>
+    <style>
+        .curso-info {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     <h1>Lista de Cursos</h1>
     <ul>
         <% Curso.forEach(function(curso) { %>
             <li>
-                <a href="/Cursos/:<%= Curso.id_curso %>">
-                    <%= curso.Nombre %> - <%= curso.categoria %>
+                <a href="/Cursos/:<%= curso.id_curso %>">
+                    <div class="curso-info">
+                        <span>Nombre materia: <%= curso.Nombre %></span> - <span>Categoria del curso: <%= curso.categoria %></span>
+                    </div>
                 </a>
             </li>
         <% }); %>
     </ul>
 </body>
 </html>
+
