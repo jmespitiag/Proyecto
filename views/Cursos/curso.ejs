@@ -4,9 +4,10 @@
     <title>Detalles del Curso</title>
 </head>
 <body>
-    <h1>Curso: <%=Nombre %></h1>
+    <h1>Curso: <%= Nombre %></h1>
 
-    <h2>Profesores</h2>
+
+    <h2>Profesor/h2>
     <ul>
         <% if (Curso.profesores) {
             Curso.profesores.forEach(function(profesor) { %>
