@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalles del Curso</title>
+</head>
+<body>
+    <h1>Detalles del Curso</h1>
+    <h2>Profesores</h2>
+    <ul>
+        <% profesores.forEach(function(profesor) { %>
+            <li>Nombre: <%= profesor.nombre %>, Email: <%= profesor.email %></li>
+        <% }); %>
+
+    </ul>
+    <h2>Alumnos</h2>
+    <ul>
+        <% alumnos.forEach(function(alumno) { %>
+            <li>Nombre: <%= alumno.nombre %>, Email: <%= alumno.email %></li>
+        <% }); %>
+
+    </ul>
+    <h2>Materiales</h2>
+    <ul>
+        <% materiales.forEach(function(material) { %>
+            <li>Título: <%= material.titulo %>, Descripción: <%= material.descripcion %>, Archivo: <%= material.archivo %></li>
+        <% }); %>
+    </ul>
+    <h2>Tareas</h2>
+    <ul>
+        <% tareas.forEach(function(tarea) { %>
+            <li>Nombre: <%= tarea.nombre %>, Descripción: <%= tarea.descripcion %>, Fecha de entrega: <%= tarea.fecha_e %>, Archivo: <%= tarea.archivo %></li>
+        <% }); %>
+    </ul>
+    <h2>Foros</h2>
+    <ul>
+        <% foros.forEach(function(foro) { %>
+            <li>Nombre: <%= foro.nombre %>, Descripción: <%= foro.descripcion %></li>
+        <% }); %>
+    </ul>
+</body>
+</html>
