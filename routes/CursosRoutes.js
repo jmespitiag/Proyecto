@@ -30,7 +30,7 @@ router.get('/:id_curso', async (req, res, next) => {
       alumnos,
       materiales,
       tareas,
-      foroso
+      foros
     };
 
     res.render('Cursos/curso', { Curso: data });
