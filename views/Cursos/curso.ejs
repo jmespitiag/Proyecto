@@ -21,7 +21,7 @@
         <% if (Curso.profesores) {
             Curso.profesores.forEach(function(profesor) { %>
                 <li>Nombre: <%= profesor.nombre %></li>
-                <li>Email: <%= profesor.email %></li>
+                <br><li>Email: <%= profesor.email %></li>
             <% });
         } %>
     </ul>
