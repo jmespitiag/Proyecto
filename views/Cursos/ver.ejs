@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lista de Cursos</title>
+    <title>Cursos</title>
 </head>
 <body>
     <h1>Lista de Cursos</h1>
     <ul>
         <% Curso.forEach(function(curso) { %>
-            <li><%= curso.Nombre %> - <%= curso.categoria %></li>
+            <li>
+                <a href="/Cursos/<%= curso.id_curso %>">
+                    <%= curso.Nombre %> - <%= curso.categoria %>
+                </a>
+            </li>
         <% }); %>
     </ul>
 </body>
