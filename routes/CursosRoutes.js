@@ -33,7 +33,8 @@ router.get('/:id_curso', async (req, res, next) => {
       foros
     };
 
-    res.render('Cursos/curso', { Curso: data });
+    res.render('Cursos/curso', { Curso: data,
+      id_curso: req.params.id_curso });
   } catch (error) {
     console.error(error);
     res.status(500).send('Error al obtener los datos');
