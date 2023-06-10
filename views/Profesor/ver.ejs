@@ -16,27 +16,27 @@
             </tr>
         </thead>
         <tbody>
-            <% Profesor.forEach(Profesor=> { %>
+            <% Profesor.forEach(profesor => { %>
             <tr>
-                <td><%= Profesor.nombre %></td>
-                <td><%= Profesor.email %></td>
-                <td><%= Profesor.telefono %></td>
-                <td><%= Profesor.area_p %></td>
-                <td><%= Profesor.area_a%></td>
-                <td><%= Profesor.contraseña></td>
+                <td><%= profesor.nombre %></td>
+                <td><%= profesor.email %></td>
+                <td><%= profesor.telefono %></td>
+                <td><%= profesor.area_p %></td>
+                <td><%= profesor.area_a %></td>
+                <td><%= profesor.contraseña %></td>
                 
                 <td>
-                    <a href="/Profesor/editar/<%= Profesor.doc_identidad %>" class="btn btn-warning">
+                    <a href="/Profesor/editar/<%= profesor.doc_identidad %>" class="btn btn-warning">
                         Editar
                     </a>
                 </td>
                 <td>
-                    <a href="/Profesor/eliminar/<%= Profesor.doc_identidad %>" class="btn btn-danger">
+                    <a href="/Profesor/eliminar/<%= profesor.doc_identidad %>" class="btn btn-danger">
                         Eliminar
                     </a>
                 </td>
             </tr>
-            <% })%>
+            <% }) %>
         </tbody>
     </table>
     <a href="/" class="btn btn-secondary mb-2">Regresar</a>
