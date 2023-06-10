@@ -12,7 +12,7 @@ module.exports = {
     },
     obtener() {
         return new Promise((resolve, reject) => {
-            conexion.query(`select id_nodo,ref_bancaria, email,genero,nombre,doc_identidad,contraseña from Estudiante`,
+            conexion.query(`select id_nodo,ref_bancaria, email,genero,nombre,doc_identidad,contraseña from Usuario`,
                 (err, resultados) => {
                     if (err) reject(err);
                     else resolve(resultados);
@@ -21,7 +21,7 @@ module.exports = {
     },
     obtenerPorId(doc_identidad) {
         return new Promise((resolve, reject) => {
-            conexion.query(`select id_nodo,ref_bancaria, email,genero,nombre,doc_identidad,contraseña from Estudiante where doc_identidad = ?`,
+            conexion.query(`select id_nodo,ref_bancaria, email,genero,nombre,doc_identidad,contraseña from Usuario where doc_identidad = ?`,
                 [doc_identidad],
                 (err, resultados) => {
                     if (err) reject(err);
@@ -31,7 +31,7 @@ module.exports = {
     },
     actualizar(id_nodo,ref_bancaria, email,genero,nombre,doc_identidad,contraseña) {
         return new Promise((resolve, reject) => {
-            conexion.query(`update Estudiante
+            conexion.query(`update Usuario
             set ref_bancaria = ?,
             email = ?,
             genero= ?,
@@ -48,7 +48,7 @@ module.exports = {
     },
     eliminar(idoc_identidad) {
         return new Promise((resolve, reject) => {
-            conexion.query(`delete from Estudiante
+            conexion.query(`delete from Usuario
             where doc_identidad= ?`,
                 [doc_identidad],
                 (err) => {
