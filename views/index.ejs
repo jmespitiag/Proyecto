@@ -45,6 +45,10 @@
         text-align: center;
       }
 
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
       .dropdown-content {
         display: none;
         position: absolute;
@@ -106,10 +110,10 @@
       <h1><%= title %></h1>
       <p>Estás mirando la página de inicio, navega a:</p>
       <div class="dropdown">
-        <a href="#" class="dropdown-link" onclick="toggleDropdown(event)">
+        <a href="#" class="dropdown-link">
           <span>Selecciona una opción</span>
         </a>
-        <div class="dropdown-content" id="dropdownContent">
+        <div class="dropdown-content">
           <a href="/Profesor" class="btn">Profesor</a>
           <a href="/Usuario" class="btn">Usuario</a>
         </div>
@@ -121,14 +125,5 @@
       <p>O navega aquí para ver los cursos:</p>
       <a href="/Cursos" class="btn">Ver Cursos</a>
     </div>
-
-    <script>
-      function toggleDropdown(event) {
-        event.preventDefault();
-        var dropdownContent = document.getElementById("dropdownContent");
-        dropdownContent.style.display =
-          dropdownContent.style.display === "none" ? "block" : "none";
-      }
-    </script>
   </body>
 </html>
