@@ -36,7 +36,7 @@ module.exports = {
             email = ?,
             genero= ?,
             nombre = ?,
-            id_nodo = ?,
+            id_nodo = ?
             where doc_identidad = ?`,
                 [id_nodo,ref_bancaria, email,genero,nombre,doc_identidad],
                 (err) => {
