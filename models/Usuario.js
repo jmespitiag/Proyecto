@@ -12,7 +12,7 @@ module.exports = {
     },
     obtener() {
         return new Promise((resolve, reject) => {
-            conexion.query(`select id_nodo,ref_bancaria, email,genero,nombre,doc_identidad,contraseña from Usuario`,
+            conexion.query(`select id_nodo,ref_bancaria, email,genero,nombre,doc_identidad from Usuario`,
                 (err, resultados) => {
                     if (err) reject(err);
                     else resolve(resultados);
@@ -21,7 +21,7 @@ module.exports = {
     },
     obtenerPorId(doc_identidad) {
         return new Promise((resolve, reject) => {
-            conexion.query(`select id_nodo,ref_bancaria, email,genero,nombre,doc_identidad,contraseña from Usuario where doc_identidad = ?`,
+            conexion.query(`select id_nodo,ref_bancaria, email,genero,nombre,doc_identidad from Usuario where doc_identidad = ?`,
                 [doc_identidad],
                 (err, resultados) => {
                     if (err) reject(err);
@@ -29,7 +29,7 @@ module.exports = {
                 });
         });
     },
-    actualizar(id_nodo,ref_bancaria, email,genero,nombre,doc_identidad,contraseña) {
+    actualizar(id_nodo,ref_bancaria, email,genero,nombre,doc_identidad) {
         return new Promise((resolve, reject) => {
             conexion.query(`update Usuario
             set ref_bancaria = ?,
@@ -37,9 +37,8 @@ module.exports = {
             genero= ?,
             nombre = ?,
             id_nodo = ?,
-            contraseña = ?
             where doc_identidad = ?`,
-                [ref_bancaria, email,genero,nombre,id_nodo,contraseña,doc_identidad],
+                [ref_bancaria, email,genero,nombre,id_nodo,doc_identidad],
                 (err) => {
                     if (err) reject(err);
                     else resolve();
