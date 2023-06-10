@@ -38,7 +38,7 @@ module.exports = {
             nombre = ?,
             id_nodo = ?,
             where doc_identidad = ?`,
-                [ref_bancaria, email,genero,nombre,id_nodo,doc_identidad],
+                [id_nodo,ref_bancaria, email,genero,nombre,doc_identidad],
                 (err) => {
                     if (err) reject(err);
                     else resolve();
