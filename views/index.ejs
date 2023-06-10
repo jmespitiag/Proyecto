@@ -42,6 +42,7 @@
       .dropdown {
         display: inline-block;
         position: relative;
+        text-align: center;
       }
 
       .dropdown-content {
@@ -60,7 +61,12 @@
         display: block;
       }
 
-      .dropdown span {
+      .dropdown-link {
+        display: flex;
+        justify-content: center;
+      }
+
+      .dropdown-link span {
         display: inline-block;
         padding: 8px 12px;
         background-color: #444546;
@@ -70,7 +76,7 @@
         transition: background-color 0.3s ease;
       }
 
-      .dropdown span:hover {
+      .dropdown-link span:hover {
         background-color: #444546;
       }
 
@@ -104,10 +110,12 @@
       <h1><%= title %></h1>
       <p>Estás mirando la página de inicio, navega a:</p>
       <div class="dropdown">
-        <span>Selecciona una opción</span>
+        <a href="#" class="dropdown-link">
+          <span>Selecciona una opción</span>
+        </a>
         <div class="dropdown-content" style="display: flex; flex-direction: row;">
           <a href="/Profesor" class="btn">Profesor</a>
-          <a href="/Estudiante" class="btn">Estudiante</a>
+          <a href="/Usuario" class="btn">Usuario</a>
         </div>
       </div>
       <br>
