@@ -1,7 +1,7 @@
 <%- include("../header"); %>
 <div class="col-12">
-    <h1>Estudiantes</h1>
-    <a href="/Estudiante/agregar" class="btn btn-primary mb-2">Agregar</a>
+    <h1>Usuario</h1>
+    <a href="/Usuario/agregar" class="btn btn-primary mb-2">Agregar</a>
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -10,27 +10,25 @@
                 <th>genero</th>
                 <th>nombre</th>
                 <th>doc_identidad</th>
-                <th>contraseña</th>
                 <th>Editar</th>
                 <th>Eliminar</th>
             </tr>
         </thead>
         <tbody>
-            <% Estudiante.forEach(Estudiante=> { %>
+            <% UsuarioforEach(Usuario=> { %>
             <tr>
-                <td><%= Estudiante.ref_bancaria %></td>
-                <td><%= Estudiante.email %></td>
-                <td><%= Estudiante.genero %></td>
-                <td><%= Estudiante.nombre %></td>
-                <td><%= Estudiante.doc_identidad %></td>
-                <td><%= Estudiante.contraseña %></td>
+                <td><%= Usuario.ref_bancaria %></td>
+                <td><%= Usuario.email %></td>
+                <td><%= Usuario.genero %></td>
+                <td><%= Usuario.nombre %></td>
+                <td><%= Usuario.doc_identidad %></td>
                 <td>
-                    <a href="/Estudiante/editar/<%= Estudiante.id_nodo %>" class="btn btn-warning">
+                    <a href="/Usuario/editar/<%= Usuario.doc_identidad %>" class="btn btn-warning">
                         Editar
                     </a>
                 </td>
                 <td>
-                    <a href="/Estudiante/eliminar/<%= Estudiante.id_nodo %>" class="btn btn-danger">
+                    <a href="/Usuario/eliminar/<%= Usuario.doc_identidad %>" class="btn btn-danger">
                         Eliminar
                     </a>
                 </td>

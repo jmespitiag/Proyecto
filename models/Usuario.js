@@ -1,10 +1,10 @@
 const conexion = require("../conexion");
 
 module.exports = {
-    insertar(id_nodo,ref_bancaria, email,genero,nombre,doc_identidad,contraseña) {
+    insertar(id_nodo,ref_bancaria, email,genero,nombre,doc_identidad) {
         return new Promise((resolve, reject) => {
-            conexion.query(`insert into Estudiante(id_nodo,ref_bancaria, email,genero,nombre,doc_identidad,contraseña) values (?,?, ?, ?,?,?,?)`,
-                [id_nodo,ref_bancaria, email,genero,nombre,doc_identidad,contraseña], (err, resultados) => {
+            conexion.query(`insert into Usuario(id_nodo,ref_bancaria, email,genero,nombre,doc_identidad) values (?,?, ?, ?,?,?)`,
+                [id_nodo,ref_bancaria, email,genero,nombre,doc_identidad], (err, resultados) => {
                     if (err) reject(err);
                     else resolve(resultados.insertId);
                 });
@@ -19,10 +19,10 @@ module.exports = {
                 });
         });
     },
-    obtenerPorId(id_nodo) {
+    obtenerPorId(doc_identidad) {
         return new Promise((resolve, reject) => {
-            conexion.query(`select id_nodo,ref_bancaria, email,genero,nombre,doc_identidad,contraseña from Estudiante where id_nodo = ?`,
-                [id_nodo],
+            conexion.query(`select id_nodo,ref_bancaria, email,genero,nombre,doc_identidad,contraseña from Estudiante where doc_identidad = ?`,
+                [doc_identidad],
                 (err, resultados) => {
                     if (err) reject(err);
                     else resolve(resultados[0]);
@@ -36,21 +36,21 @@ module.exports = {
             email = ?,
             genero= ?,
             nombre = ?,
-            doc_identidad = ?,
+            id_nodo = ?,
             contraseña = ?
-            where id_nodo = ?`,
-                [ref_bancaria, email,genero,nombre,doc_identidad,contraseña,id_nodo],
+            where doc_identidad = ?`,
+                [ref_bancaria, email,genero,nombre,id_nodo,contraseña,doc_identidad],
                 (err) => {
                     if (err) reject(err);
                     else resolve();
                 });
         });
     },
-    eliminar(id_nodo) {
+    eliminar(idoc_identidad) {
         return new Promise((resolve, reject) => {
             conexion.query(`delete from Estudiante
-            where id_nodo= ?`,
-                [id_nodo],
+            where doc_identidad= ?`,
+                [doc_identidad],
                 (err) => {
                     if (err) reject(err);
                     else resolve();

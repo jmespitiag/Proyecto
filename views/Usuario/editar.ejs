@@ -1,0 +1,38 @@
+<%- include("../header"); %>
+<div class="col-12">
+    <h1>Editar Usuario</h1>
+    <form method="post" action="/Usuario/actualizar">
+
+        <input value="<%= Usuario.id_nodo %>" name="id_nodo" type="hidden">
+        <div class="form-group">
+            <label for="ref_bancaria" class="small">ref_bancaria</label>
+            <input value="<%= Usuario.ref_bancaria %>" required id="ref_bancaria" placeholder="Referefcia bancaria del Usuario"
+                class="form-control" type="text" name="ref_bancaria">
+        </div>
+        <div class="form-group">
+            <label for="email" class="small">email</label>
+            <input value="<%= Usuario.email %>" required id="email" placeholder="Email del Usuario"
+                class="form-control" type="text" name="email">
+        </div>
+        <div class="form-group">
+            <label for="genero" class="small">genero</label>
+            <input value="<%= Usuario.genero %>" required id="genero" placeholder="Genero del Usuario"
+                class="form-control" type="text" name="genero">
+        </div>
+        <div class="form-group">
+            <label for="nombre" class="small">nombre</label>
+            <input value="<%= Usuario.nombre %>" required id="nombre" placeholder="Nombre del Usuario"
+                class="form-control" type="text" name="nombre">
+        </div>
+        <div class="form-group">
+            <label for="doc_identidad" class="small">doc_identidad</label>
+            <input value="<%= Usuario.doc_identidad %>" required id="doc_identidad" placeholder="Docmento de identidad del Usuario"
+                class="form-control" type="number" name="doc_identidad">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-success">Guardar</button>
+            &nbsp;<a href="/Usuario" class="btn btn-primary">Volver</a>
+        </div>
+    </form>
+</div>
+<%- include("../footer"); %>
