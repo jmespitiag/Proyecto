@@ -1,43 +1,130 @@
-<%- include("../header"); %>
-<div class="col-12">
-    <h1>Profesores</h1>
-    <a href="/Profesor/agregar" class="btn btn-primary mb-2">Agregar</a>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>nombre</th>
-                <th>email</th>
-                <th>telefono</th>
-                <th>area_p</th>
-                <th>area_a</th>
-                <th>contraseña</th>
-                <th>Editar</th>
-                <th>Eliminar</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% Profesor.forEach(Profesor=> { %>
-            <tr>
-                <td><%= Profesor.nombre %></td>
-                <td><%= Profesor.email %></td>
-                <td><%= Profesor.telefono %></td>
-                <td><%= Profesor.area_p %></td>
-                <td><%= Profesor.area_a %></td>
-                <td><%= Profesor.contraseña %></td>
-                <td>
-                    <a href="/Profesor/editar/<%= Profesor.doc_id %>" class="btn btn-warning">
-                        Editar
-                    </a>
-                </td>
-                <td>
-                    <a href="/Profesor/eliminar/<%= Profesor.doc_id %>" class="btn btn-danger">
-                        Eliminar
-                    </a>
-                </td>
-            </tr>
-            <% })%>
-        </tbody>
-    </table>
-    <a href="/" class="btn btn-secondary mb-2">Regresar</a>
-</div>
-<%- include("../footer"); %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <style>
+      /* Estilos generales */
+      body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        text-align: center;
+        border: 2px solid #000;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        max-width: 400px;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      p {
+        margin-bottom: 10px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      /* Estilos para la lista desplegable */
+      .dropdown {
+        display: inline-block;
+        position: relative;
+        text-align: center;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        min-width: 160px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 12px 16px;
+        z-index: 1;
+        border-radius: 4px;
+        text-align: left;
+      }
+
+      .dropdown-link {
+        display: flex;
+        justify-content: center;
+      }
+
+      .dropdown-link span {
+        display: inline-block;
+        padding: 8px 12px;
+        background-color: #444546;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+      }
+
+      .dropdown-link span:hover {
+        background-color: #444546;
+      }
+
+      .dropdown-content a {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      /* Estilos para el botón de Ver Cursos */
+      .btn {
+        display: inline-block;
+        padding: 8px 16px;
+        margin: 0 5px;
+        background-color: #444546;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #444546;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1><%= title %></h1>
+      <p>Estás mirando la página de inicio, navega a:</p>
+      <div class="dropdown">
+        <a href="#" class="dropdown-link">
+          <span>Selecciona una opción</span>
+        </a>
+        <div class="dropdown-content">
+          <a href="/Profesor" class="btn">Profesor</a>
+          <a href="/Estudiante" class="btn">Estudiante</a>
+          <a href="/Administrador" class="btn">Administrador</a>
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <p>O navega aquí para ver los cursos:</p>
+      <a href="/Cursos" class="btn">Ver Cursos</a>
+    </div>
+  </body>
+</html>
