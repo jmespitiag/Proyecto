@@ -45,7 +45,7 @@ module.exports = {
                 });
         });
     },
-    eliminar(idoc_identidad) {
+    eliminar(doc_identidad) {
         return new Promise((resolve, reject) => {
             conexion.query(`delete from Usuario
             where doc_identidad= ?`,
