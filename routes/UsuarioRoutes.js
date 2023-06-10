@@ -37,7 +37,7 @@ router.post('/insertar', function (req, res, next) {
             return res.status(500).send("Error insertando Usuario");
         });
 });
-router.get('/eliminar/:id_nodo', function (req, res, next) {
+router.get('/eliminar/:doc_identidad', function (req, res, next) {
     UsuarioModel
         .eliminar(req.params.doc_identidad)
         .then(() => {

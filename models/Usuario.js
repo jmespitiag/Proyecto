@@ -48,7 +48,7 @@ module.exports = {
     eliminar(doc_identidad) {
         return new Promise((resolve, reject) => {
             conexion.query(`delete from Usuario
-            where doc_identidad= ?`,
+            where doc_identidad = ?`,
                 [doc_identidad],
                 (err) => {
                     if (err) reject(err);
