@@ -57,10 +57,6 @@
         text-align: left;
       }
 
-      .dropdown:hover .dropdown-content {
-        display: block;
-      }
-
       .dropdown-link {
         display: flex;
         justify-content: center;
@@ -110,26 +106,12 @@
       <h1><%= title %></h1>
       <p>Estás mirando la página de inicio, navega a:</p>
       <div class="dropdown">
-        <a href="#" class="dropdown-link">
+        <a href="#" class="dropdown-link" onclick="toggleDropdown(event)">
           <span>Selecciona una opción</span>
         </a>
-        <div class="dropdown-content" style="display: flex; flex-direction: row;">
-          <div class="dropdown">
-            <a href="#" class="dropdown-link">
-              <span>Profesor</span>
-            </a>
-            <div class="dropdown-content">
-              <a href="/Profesor" class="btn">Profesor</a>
-            </div>
-          </div>
-          <div class="dropdown">
-            <a href="#" class="dropdown-link">
-              <span>Usuario</span>
-            </a>
-            <div class="dropdown-content">
-              <a href="/Usuario" class="btn">Usuario</a>
-            </div>
-          </div>
+        <div class="dropdown-content" id="dropdownContent">
+          <a href="/Profesor" class="btn">Profesor</a>
+          <a href="/Usuario" class="btn">Usuario</a>
         </div>
       </div>
       <br>
@@ -139,5 +121,14 @@
       <p>O navega aquí para ver los cursos:</p>
       <a href="/Cursos" class="btn">Ver Cursos</a>
     </div>
+
+    <script>
+      function toggleDropdown(event) {
+        event.preventDefault();
+        var dropdownContent = document.getElementById("dropdownContent");
+        dropdownContent.style.display =
+          dropdownContent.style.display === "none" ? "block" : "none";
+      }
+    </script>
   </body>
 </html>
