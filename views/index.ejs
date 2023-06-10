@@ -2,22 +2,58 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <style>
+      /* Estilos generales */
+      body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        text-align: center;
+        border: 2px solid #000;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        max-width: 400px;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      p {
+        margin-bottom: 10px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
       /* Estilos para la lista desplegable */
       .dropdown {
-        position: relative;
         display: inline-block;
+        position: relative;
       }
 
       .dropdown-content {
         display: none;
         position: absolute;
-        background-color: #f9f9f9;
+        background-color: #fff;
         min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
         padding: 12px 16px;
         z-index: 1;
+        border-radius: 4px;
+        text-align: left;
       }
 
       .dropdown:hover .dropdown-content {
@@ -27,31 +63,59 @@
       .dropdown span {
         display: inline-block;
         padding: 8px 12px;
-        background-color: #333;
+        background-color: #444546;
         color: #fff;
         cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
       }
 
       .dropdown span:hover {
-        background-color: #555;
+        background-color: #444546;
+      }
+
+      .dropdown-content a {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      /* Estilos para el botón de Ver Cursos */
+      .btn {
+        display: inline-block;
+        padding: 8px 16px;
+        margin: 0 5px;
+        background-color: #444546;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #444546;
       }
     </style>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Estás mirando la página de inicio, navega a:</p>
-    <div class="dropdown">
-      <span>Selecciona una opción</span>
-      <div class="dropdown-content">
-        <a href="/Profesor">Profesor</a>
-        <a href="/Usuario">Usuario</a>
+    <div class="container">
+      <h1><%= title %></h1>
+      <p>Estás mirando la página de inicio, navega a:</p>
+      <div class="dropdown">
+        <span>Selecciona una opción</span>
+        <div class="dropdown-content">
+          <a href="/Profesor" class="btn">Profesor</a>
+          <a href="/Estudiante" class="btn">Estudiante</a>
+        </div>
       </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <p>O navega aquí para ver los cursos:</p>
+      <a href="/Cursos" class="btn">Ver Cursos</a>
     </div>
-    <br> <!-- Agregamos un salto de línea para separar los elementos -->
-    <br>
-    <br>
-    <br>
-    <p>O navega aquí para ver los cursos:</p>
-    <a href="/Cursos" class="btn btn-primary">Ver Cursos</a>
   </body>
 </html>
